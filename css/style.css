@@ -1,0 +1,474 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /*max-width: 800px;*/
+    /*margin: 10px auto 10px auto;*/
+    /*width: 800px;*/
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('../fonts/arabic-font-2013-webfont.woff'), url('../fonts/arabic-font-2013-webfont.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'kobani';
+    src: url('../fonts/kobani.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'lobster';
+    src: url('../fonts/Lobster_1.3.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'nimbus';
+    src: url('../fonts/NimbusSanL-Reg.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*styling of icons*/
+.starIcon {
+    color: #85CCDE;
+    transform: rotate(180deg) scale(1.5);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -5px;
+    left: 5px;
+
+}
+
+.square{
+    width: 30px;
+    height: 30px;
+    background: #16AA9C;
+}
+
+.hexagon{
+    width: 20px;
+    height: 20px;
+    background: #C2272D;
+    position: relative;
+}
+.hexagon:before{
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    border-right-color: #C2272D;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.hexagon:after{
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    border-left-color: #C2272D;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FABC1B;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.item_container{
+    font-family: raleway, Arial, sans-serif;
+    max-width: 800px;
+    margin: 10px auto 10px auto;
+    width: 800px;
+    height: 40px;
+}
+
+
+
+.small_container {
+    height: 40px;
+    width: 200px;
+    font-size: 22px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.animation_1{
+    animation-name: translation1;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+
+.animation_2{
+    animation-name: translation2;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+.animation_3{
+    animation-name: translation3;
+    animation-duration: 12s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+.animation_4{
+    animation-name: translation4;
+    animation-duration: 20s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes translation1 {
+    0% {transform: translate(0, -50px);}
+    100% {transform: translate(0, 0);}
+}
+
+@keyframes translation2 {
+    0% {transform: translate(0, -200px);}
+    33% {transform: translate(0, -190px);}
+    100% {transform: translate(0, 0);}
+}
+
+@keyframes translation3 {
+    0% {transform: translate(0, -200px);}
+    50% {transform: translate(0, -190px);}
+    100% {transform: translate(0, 0);}
+}
+@keyframes translation4 {
+    0% {transform: translate(0, -300px);}
+    60% {transform: translate(0, -290px);}
+    100% {transform: translate(0, 0);}
+}
+
+
+
+.item--1 {
+    animation-name: move2, moveOut_1;
+    animation-duration: 2s, 6560ms;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 20s, 36s;
+    animation-timing-function: ease, linear;
+}
+
+.item--2 {
+    animation-name: move2, moveOut_2;
+    animation-duration: 2s, 10s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 22s, 36s;
+    animation-timing-function: ease, linear;
+}
+.item--3 {
+    animation-name: move2, moveOut_1;
+    animation-duration: 2s, 6560ms;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 24s, 36s;
+    animation-timing-function: ease, linear;
+}
+.item--4 {
+    animation-name: move2, moveOut_2;
+    animation-duration: 2s, 10s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 26s, 36s;
+    animation-timing-function: ease, linear;
+}
+
+@keyframes move2 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(-270px, 0);}
+}
+
+@keyframes move2_icon {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(270px, 0);}
+}
+
+
+
+.icon--1 {
+    animation-name: move2_icon, moveOut_3;
+    animation-duration: 2s, 10s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 20s, 36s;
+
+    animation-timing-function: ease, linear;
+}
+
+
+.icon--2 {
+    animation-name: move2_icon, moveOut_4;
+    animation-duration: 2s, 6560ms;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 22s, 36s;
+
+    animation-timing-function: ease, linear;
+
+}
+.icon--3 {
+    animation-name: move2_icon, moveOut_3;
+    animation-duration: 2s, 10s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 24s, 36s;
+
+    animation-timing-function: ease, linear;
+
+}
+
+.icon--4 {
+    animation-name: move2_icon, moveOut_4;
+    animation-duration: 2s, 6560ms;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 26s, 36s;
+
+    animation-timing-function: ease, linear;
+
+}
+
+.starIcon{
+    animation-name: color_icon1;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 28s;
+}
+.square {
+    animation-name: color_icon2;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 30s;
+}
+
+.hexagon {
+    animation-name: color_icon3;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 32s;
+}
+
+.hexagon:after {
+    animation-name: color_icon3_after;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 32s;
+}
+.hexagon:before {
+    animation-name: color_icon3_before;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 32s;
+}
+
+
+.circle {
+    animation-name: color_icon4;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 34s;
+}
+
+
+@keyframes color_icon1 {
+    0% {color: #85CCDE;}
+    100% {color: #24AADF;}
+}
+
+@keyframes color_icon2 {
+    0% {background: #16AA9C;}
+    100% {background: #5855A4;}
+}
+
+@keyframes color_icon3 {
+    0% {background: #C2272D;}
+    100% {background: #E0E2E1;}
+}
+@keyframes color_icon3_before {
+    0% {border-right-color: #C2272D;}
+    100% {border-right-color: #E0E2E1;}
+}
+@keyframes color_icon3_after {
+    0% {border-left-color: #C2272D;}
+    100% {border-left-color: #E0E2E1;}
+}
+
+@keyframes color_icon4 {
+    0% {background: #FABC1B;}
+    100% {background: #323232;}
+}
+
+@keyframes moveOut_1 {
+    0% {transform: translate(-270px, 0);
+        transform-origin: center center;}
+    100% {transform: translate(-1300px, 0);
+        transform-origin: center center;}
+}
+
+@keyframes moveOut_2 {
+    0% {transform: translate(-270px, 0);
+        transform-origin: 50% 50%;}
+    100% {transform: translate(1300px, 0);
+        transform-origin: 50% 50%;}
+}
+
+@keyframes moveOut_3 {
+    0% {transform: translate(270px, 0) rotate(0deg);
+        transform-origin: 50% 50%;}
+    100% {transform: translate(-1300px, 0) rotate(-690deg);
+        transform-origin: 50% 50%;}
+}
+
+@keyframes moveOut_4 {
+    0% {transform: translate(270px, 0) rotate(0deg);
+        transform-origin: 50% 50%;}
+    100% {transform: translate(1300px, 0) rotate(690deg);
+        transform-origin: 50% 50%;}
+}
+
+
+/*druga czesc animacji*/
+
+
+.second_flex{
+    position: relative;
+    max-width: 800px;
+    margin: 10px auto 10px auto;
+    width: 800px;
+}
+
+.choco {
+    font-family: nimbus, Arial, sans-serif;
+    font-weight: 900;
+    position: absolute;
+    top: -200px;
+    left: 0;
+}
+.cheese {
+    font-family: lobster, Arial, sans-serif;
+}
+
+
+.choco, .cheese{
+    text-align: center;
+    margin-left: calc(50% - 125px);
+    width: 250px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    height: 30px;
+    font-size: 0;
+    animation-name: enlarge, rotateText, disapear;
+    animation-duration: 5s, 4s, 5s;
+    animation-iteration-count: 1, 1, 1;
+    animation-delay: 46s, 56s, 60s;
+    animation-fill-mode: forwards, forwards, forwards;
+}
+
+@keyframes enlarge {
+    0% {font-size: 0;}
+    100% {font-size: 20px;}
+}
+
+@keyframes rotateText {
+    0% {transform: rotateX(0deg);}
+    100% {transform: rotateX(360deg);}
+}
+
+@keyframes disapear {
+    0% {opacity: 1; font-size: 20px}
+    100% {opacity: 0; font-size: 0}
+}
+
+
+
+.roll {
+    display: inline-block;
+    transform: translate(330px, -70px);
+    text-align: center;
+    font-family: kobani, Arial, sans-serif;
+    width: 120px;
+    padding: 10px;
+    border: 1px solid grey;
+    font-size: 14px;
+    opacity: 0;
+    animation-name: flyIn, rotateTextRoll, disapearRoll;
+    animation-duration: 5s, 4s, 5s;
+    animation-iteration-count: 1, 1, 1;
+    animation-delay: 51s, 56s, 60s;
+    animation-fill-mode: forwards, forwards, forwards;
+}
+
+
+
+@keyframes flyIn {
+    0% {transform: translate(0px, -400px); opacity: 1;}
+    50% {transform: translate(0px, -70px); opacity: 1;}
+    100% {transform: translate(330px, -70px); opacity: 1;}
+}
+
+@keyframes rotateTextRoll {
+    0% {transform: translate(330px, -70px) rotateX(0deg);}
+    100% {transform: translate(330px, -70px) rotateX(360deg);}
+}
+
+@keyframes disapearRoll {
+    0% {opacity: 1; font-size: 14px; padding:10px; margin-left:0; width: 120px;}
+    100% {opacity: 0; font-size: 0; padding: 0; margin-left:60px; width: 0px;}
+}
