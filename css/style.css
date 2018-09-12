@@ -5,14 +5,7 @@
     box-sizing: border-box;
 }
 
-.hidden{
-    overflow-x: hidden;
-    overflow-y: hidden;
-    /*max-width: 800px;*/
-    /*margin: 10px auto 10px auto;*/
-    /*width: 800px;*/
-}
-
+/*additional fonts*/
 @font-face {
     font-family: 'raleway';
     src: url('../fonts/arabic-font-2013-webfont.woff'), url('../fonts/arabic-font-2013-webfont.woff2');
@@ -38,6 +31,52 @@
     font-style: normal;
 }
 
+/*main class - blocking of scrolling*/
+.hidden{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /*max-width: 800px;*/
+    /*margin: 10px auto 10px auto;*/
+    /*width: 800px;*/
+}
+
+/* 2 main classess necessary for animations except last one */
+/* flex */
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+/*styling of container - sizes*/
+.item_container{
+    font-family: raleway, Arial, sans-serif;
+    max-width: 800px;
+    margin: 10px auto 10px auto;
+    width: 800px;
+    height: 40px;
+}
+
+/*styling of small container for subtitle - sizes*/
+.small_container {
+    height: 40px;
+    width: 200px;
+    font-size: 22px;
+}
+
+/*styling of container for icons*/
+.icon {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 /*styling of icons*/
 .starIcon {
     color: #85CCDE;
@@ -47,7 +86,6 @@
     position: absolute;
     top: -5px;
     left: 5px;
-
 }
 
 .square{
@@ -97,41 +135,8 @@
     background-color: #FABC1B;
 }
 
-.flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.item_container{
-    font-family: raleway, Arial, sans-serif;
-    max-width: 800px;
-    margin: 10px auto 10px auto;
-    width: 800px;
-    height: 40px;
-}
-
-
-
-.small_container {
-    height: 40px;
-    width: 200px;
-    font-size: 22px;
-}
-
-.icon {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
+/* animations */
+/* animation 1 flying in */
 .animation_1{
     animation-name: translation1;
     animation-duration: 2s;
@@ -139,7 +144,6 @@
     animation-delay: 0s;
     animation-fill-mode: forwards;
 }
-
 
 .animation_2{
     animation-name: translation2;
@@ -165,7 +169,6 @@
     animation-fill-mode: forwards;
 }
 
-
 @keyframes translation1 {
     0% {transform: translate(0, -50px);}
     100% {transform: translate(0, 0);}
@@ -189,7 +192,8 @@
 }
 
 
-
+/* animation 2 - moving description and icon to sides - move2*/
+/* animation 4 - moving description and icon outside - moveOut*/
 .item--1 {
     animation-name: move2, moveOut_1;
     animation-duration: 2s, 6560ms;
@@ -224,25 +228,12 @@
     animation-timing-function: ease, linear;
 }
 
-@keyframes move2 {
-    0% {transform: translate(0, 0);}
-    100% {transform: translate(-270px, 0);}
-}
-
-@keyframes move2_icon {
-    0% {transform: translate(0, 0);}
-    100% {transform: translate(270px, 0);}
-}
-
-
-
 .icon--1 {
     animation-name: move2_icon, moveOut_3;
     animation-duration: 2s, 10s;
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards, forwards;
     animation-delay: 20s, 36s;
-
     animation-timing-function: ease, linear;
 }
 
@@ -253,7 +244,6 @@
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards, forwards;
     animation-delay: 22s, 36s;
-
     animation-timing-function: ease, linear;
 
 }
@@ -263,7 +253,6 @@
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards, forwards;
     animation-delay: 24s, 36s;
-
     animation-timing-function: ease, linear;
 
 }
@@ -274,85 +263,17 @@
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards, forwards;
     animation-delay: 26s, 36s;
-
     animation-timing-function: ease, linear;
-
 }
 
-.starIcon{
-    animation-name: color_icon1;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 28s;
-}
-.square {
-    animation-name: color_icon2;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 30s;
+@keyframes move2 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(-270px, 0);}
 }
 
-.hexagon {
-    animation-name: color_icon3;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 32s;
-}
-
-.hexagon:after {
-    animation-name: color_icon3_after;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 32s;
-}
-.hexagon:before {
-    animation-name: color_icon3_before;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 32s;
-}
-
-
-.circle {
-    animation-name: color_icon4;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 34s;
-}
-
-
-@keyframes color_icon1 {
-    0% {color: #85CCDE;}
-    100% {color: #24AADF;}
-}
-
-@keyframes color_icon2 {
-    0% {background: #16AA9C;}
-    100% {background: #5855A4;}
-}
-
-@keyframes color_icon3 {
-    0% {background: #C2272D;}
-    100% {background: #E0E2E1;}
-}
-@keyframes color_icon3_before {
-    0% {border-right-color: #C2272D;}
-    100% {border-right-color: #E0E2E1;}
-}
-@keyframes color_icon3_after {
-    0% {border-left-color: #C2272D;}
-    100% {border-left-color: #E0E2E1;}
-}
-
-@keyframes color_icon4 {
-    0% {background: #FABC1B;}
-    100% {background: #323232;}
+@keyframes move2_icon {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(270px, 0);}
 }
 
 @keyframes moveOut_1 {
@@ -383,10 +304,86 @@
         transform-origin: 50% 50%;}
 }
 
+/* animation 3 - changing the color of icons */
+.starIcon{
+    animation-name: color_icon1;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 28s;
+}
+.square {
+    animation-name: color_icon2;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 30s;
+}
 
-/*druga czesc animacji*/
+.hexagon {
+    animation-name: color_icon3;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 32s;
+}
+
+.hexagon:after {
+    animation-name: color_icon3_after;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 32s;
+}
+
+.hexagon:before {
+    animation-name: color_icon3_before;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 32s;
+}
+
+.circle {
+    animation-name: color_icon4;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 34s;
+}
+
+@keyframes color_icon1 {
+    0% {color: #85CCDE;}
+    100% {color: #24AADF;}
+}
+
+@keyframes color_icon2 {
+    0% {background: #16AA9C;}
+    100% {background: #5855A4;}
+}
+
+@keyframes color_icon3 {
+    0% {background: #C2272D;}
+    100% {background: #E0E2E1;}
+}
+@keyframes color_icon3_before {
+    0% {border-right-color: #C2272D;}
+    100% {border-right-color: #E0E2E1;}
+}
+@keyframes color_icon3_after {
+    0% {border-left-color: #C2272D;}
+    100% {border-left-color: #E0E2E1;}
+}
+
+@keyframes color_icon4 {
+    0% {background: #FABC1B;}
+    100% {background: #323232;}
+}
 
 
+
+/*second part of animation*/
+/* main container */
 .second_flex{
     position: relative;
     max-width: 800px;
@@ -394,6 +391,7 @@
     width: 800px;
 }
 
+/* styling of articles choco and cheese*/
 .choco {
     font-family: nimbus, Arial, sans-serif;
     font-weight: 900;
@@ -404,7 +402,6 @@
 .cheese {
     font-family: lobster, Arial, sans-serif;
 }
-
 
 .choco, .cheese{
     text-align: center;
@@ -421,6 +418,7 @@
     animation-fill-mode: forwards, forwards, forwards;
 }
 
+/* keyframes for choco and cheese */
 @keyframes enlarge {
     0% {font-size: 0;}
     100% {font-size: 20px;}
@@ -437,7 +435,7 @@
 }
 
 
-
+/* styling of article roll*/
 .roll {
     display: inline-block;
     transform: translate(330px, -70px);
@@ -455,8 +453,7 @@
     animation-fill-mode: forwards, forwards, forwards;
 }
 
-
-
+/* keyframes for .roll */
 @keyframes flyIn {
     0% {transform: translate(0px, -400px); opacity: 1;}
     50% {transform: translate(0px, -70px); opacity: 1;}
@@ -470,5 +467,6 @@
 
 @keyframes disapearRoll {
     0% {opacity: 1; font-size: 14px; padding:10px; margin-left:0; width: 120px;}
-    100% {opacity: 0; font-size: 0; padding: 0; margin-left:60px; width: 0px;}
+    100% {opacity: 0; font-size: 0; padding: 0; margin-left:60px; width: 0;}
 }
+
