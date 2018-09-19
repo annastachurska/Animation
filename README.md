@@ -1,7 +1,7 @@
 <img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
 
 # Animacje CSS
-Created during Coders Lab classes during course JavaScript developer: React.
+The game was created in the frame of Coders Lab class during course JavaScript developer: React.
 # CodersLab_Animacja_CSS
 
 **Technology:** HTML5, CSS3.
