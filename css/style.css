@@ -71,6 +71,7 @@
     height: 40px;
     width: 200px;
     font-size: 22px;
+    text-transform: uppercase;
 }
 
 /*styling of container for icons*/
@@ -1118,6 +1119,10 @@
 }
 
 /* styling of articles choco and cheese*/
+.choco, .roll, .cheese {
+    text-transform: uppercase;
+}
+
 .choco {
     font-family: nimbus, Arial, sans-serif;
     font-weight: 900;
